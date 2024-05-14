@@ -1,0 +1,72 @@
+.filter 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    border: 1px solid #DFE5EC
+    background: #FFFFFF
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1)
+    border-radius: 5px
+    width: 100%
+    max-width: 232px
+    height: fit-content
+
+    &__title
+        font-weight: 600
+        font-size: 13px
+        color: #211C1C
+        padding: 20px 20px 15px
+
+    &__list
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: 0 0 10px
+        width: 100%
+
+    &__item
+        position: relative
+        display: flex
+        align-items: center
+        font-weight: 400
+        font-size: 13px
+        line-height: 20px
+        display: flex
+        color: #4A4A4A
+        padding: 10px 20px 10px 48px
+        width: 100%
+        transition: all ease-in-out .3s
+        cursor: pointer
+        &:hover
+            background: #F1FCFF
+            color: #4a4a4a
+
+        &::before
+            display: block
+            width: 20px
+            height: 20px
+            position: absolute
+            content: ''
+            border: 1px solid #9ABBCE
+            border-radius: 2px
+            left: 20px
+
+        &_active::after
+            display: block
+            width: 12px
+            height: 5px
+            position: absolute
+            content: ""
+            border: 2px solid #2196F3
+            border-bottom: 0px
+            border-left: 0px
+            rotate: 135deg
+            left: 25px
+            top: 16px
+
+    label, input
+        cursor: pointer
+
+    input
+        position: absolute
+
+
