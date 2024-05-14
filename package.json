@@ -1,6 +1,7 @@
 {
   "name": "test",
   "version": "1.0.0",
+  "homepage": "https://kotsemirk.github.io/Test-task",
   "description": "",
   "main": "index.js",
   "scripts": {
