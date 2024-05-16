@@ -1,4 +1,4 @@
-{ "posts": [
+ [
     {
         "id": 1,
         "price": 12500,
@@ -335,4 +335,4 @@
         "route": "LHR - DXB",
         "reverse_route": "DXB - LHR"
     }
-]}
+]

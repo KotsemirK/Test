@@ -22,16 +22,6 @@ This project is [Aviasales test task]. It is developed using React, Redux, TypeS
     npm install
     ```
 
-## Running JSON Server
-
-JSON Server is used for developing a fake API. It will listen for requests at `http://localhost:3001`.
-
-1. Start the JSON Server:
-
-    ```bash
-    json-server --watch "src/ticketList.json" --port 3001
-    ```
-
 ## Running Webpack Server
 
 Webpack server is used for developing the frontend of the project. It will listen for file changes and refresh the page as needed. By default, the Webpack server listens on port `9000`.

@@ -5,18 +5,18 @@ import { ITicket } from "../../../models/ITicket";
 import { fetchTickets } from "./ActionCreators";
 
 
-interface TicketsState {
+export interface TicketsState {
   tickets: ITicket[];
-  filteredTickets: ITicket[];
   isLoading: boolean;
   error: string;
+  canLoadMore: boolean;
 };
 
 const initialState: TicketsState = {
   tickets: [],
-  filteredTickets: [], 
   isLoading: false,
   error: '',
+  canLoadMore: true
 };
 
 export const ticketsSlice = createSlice({
@@ -30,9 +30,16 @@ export const ticketsSlice = createSlice({
         state.error = '';
       })
       .addCase(fetchTickets.fulfilled, (state, action) => {
+        if (action.payload !== undefined) {
+          if (action.meta.arg.startIndex === 0) {
+            state.tickets = action.payload.result;
+          } else {
+            state.tickets = [...state.tickets, ...action.payload.result];
+          }
+          state.canLoadMore = action.payload.canLoadMore;
+        }
+
         state.isLoading = false;
-        state.tickets = action.payload;
-        state.filteredTickets = action.payload;
       })
       .addCase(fetchTickets.rejected, (state, action) => {
         state.isLoading = false;

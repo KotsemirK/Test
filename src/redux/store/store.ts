@@ -2,17 +2,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import ticketsReducer from './reducers/ticketsSlice';
 
-import { ticketsApi } from '../../services/TicketsService';
-
 const rootReducer = combineReducers({
-    ticketsReducer, 
-    [ticketsApi.reducerPath]: ticketsApi.reducer,
+    ticketsReducer
 });
 
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
-        middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(ticketsApi.middleware),
     })
 };
 

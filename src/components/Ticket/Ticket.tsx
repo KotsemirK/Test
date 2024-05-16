@@ -16,8 +16,8 @@ const Ticket: React.FC<ITicketProps> = ({ ticket }) => {
                 <span className={styles.ticket__price}>
                     {formatNumberWithSpaceSeparator(ticket.price)} {ticket.currency}
                 </span>
-                {/* Сама іконка svg з макету витягується з фоном,
-                    який неможливо прибрати*/}
+                {/* The svg icon from the layout have 
+                a background that cannot be removed*/}
                 <div className={styles.ticket__logo}><Logo /></div>
             </div>
 
